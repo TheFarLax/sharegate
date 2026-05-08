@@ -408,7 +408,7 @@ uploadBtn.onclick =
 
       const uploadRes =
         await fetch(
-          "http://localhost:3000/upload",
+          "https://sharegate-backend.onrender.com/upload",
           {
             method: "POST",
 
@@ -437,7 +437,7 @@ uploadBtn.onclick =
         "Saving encryption key...";
 
       await fetch(
-        "http://localhost:3000/store-key",
+        "https://sharegate-backend.onrender.com/store-key",
         {
           method: "POST",
 
@@ -516,7 +516,7 @@ uploadBtn.onclick =
       // SAVE DB
       // -----------------------------------
       await fetch(
-        "http://localhost:3000/save-file",
+        "https://sharegate-backend.onrender.com/save-file",
         {
           method: "POST",
 

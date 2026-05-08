@@ -56,7 +56,7 @@ async function loadFiles() {
 
   const res =
     await fetch(
-      `http://localhost:3000/files/${wallet}`
+      `https://sharegate-backend.onrender.com/files/${wallet}`
     );
 
   const data =
@@ -311,7 +311,7 @@ async function revokeAccess(
 
     // update DB
     await fetch(
-      "http://localhost:3000/revoke-file",
+      "https://sharegate-backend.onrender.com/revoke-file",
       {
         method: "POST",
 

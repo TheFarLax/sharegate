@@ -182,7 +182,7 @@ downloadBtn.onclick =
 
       const keyRes =
         await fetch(
-          "http://localhost:3000/get-key",
+          "https://sharegate-backend.onrender.com/get-key",
           {
             method: "POST",
 
