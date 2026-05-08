@@ -551,7 +551,7 @@ uploadBtn.onclick =
       // SHARE LINK
       // -----------------------------------
       const shareLink =
-        `http://localhost:8080/download.html?shareId=${shareId}&cid=${cid}`;
+        `https://YOUR-VERCEL-URL.vercel.app/download.html?shareId=${shareId}&cid=${cid}`;
 
       statusDiv.innerHTML = `
         <p>

@@ -80,7 +80,7 @@ async function loadFiles() {
   ) {
 
     const shareLink =
-      `http://localhost:8080/download.html?shareId=${file.shareId}&cid=${file.cid}`;
+      `https://YOUR-VERCEL-URL.vercel.app/download.html?shareId=${file.shareId}&cid=${file.cid}`;
 
     // -----------------------------------
     // STATUS
