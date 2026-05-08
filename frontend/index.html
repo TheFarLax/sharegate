@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>
+    ShareGate
+  </title>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  />
+
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="logo">
+
+        <img
+          src="assets/logo-icon.png"
+          alt="ShareGate"
+        />
+
+        <span>
+          ShareGate
+        </span>
+
+      </div>
+
+      <div class="menu">
+
+        <div class="menuItem active">
+          Upload
+        </div>
+
+        <a
+          href="dashboard.html"
+          class="menuLink"
+        >
+          Dashboard
+        </a>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <div class="topbar">
+
+        <div>
+
+          <h1>
+            Secure Upload
+          </h1>
+
+          <p>
+            End-to-end encrypted decentralized sharing
+          </p>
+
+        </div>
+
+        <button id="connectBtn">
+          Connect Wallet
+        </button>
+
+      </div>
+
+      <!-- UPLOAD CARD -->
+      <div class="uploadCard">
+
+        <div class="dropZone">
+
+          <input
+            type="file"
+            id="fileInput"
+          />
+
+          <p id="dropTitle">
+            Drag & drop file here
+          </p>
+
+          <span id="dropSubtitle">
+            or click to browse
+          </span>
+
+        </div>
+
+        <!-- RECIPIENT -->
+        <div class="field">
+
+          <label>
+            Recipient Wallet
+          </label>
+
+          <input
+            type="text"
+            id="recipient"
+            placeholder="0x..."
+          />
+
+        </div>
+
+        <!-- EXPIRY -->
+        <div class="field">
+
+          <label>
+            Expiry
+          </label>
+
+          <select id="expirySelect">
+
+            <option value="0">
+              Never Expire
+            </option>
+
+            <option value="3600">
+              1 Hour
+            </option>
+
+            <option value="86400">
+              1 Day
+            </option>
+
+            <option value="604800">
+              7 Days
+            </option>
+
+            <option value="2592000">
+              30 Days
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- BUTTON -->
+        <button id="uploadBtn">
+          Encrypt & Upload
+        </button>
+
+        <!-- STATUS -->
+        <div id="status">
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>

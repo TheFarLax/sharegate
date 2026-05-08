@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 
+  <link
+    rel="icon"
+    href="assets/logo-icon.png"
+  />
+
+  <title>
+    ShareGate Dashboard
+  </title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <link
+    rel="stylesheet"
+    href="dashboard.css"
+  />
+
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="logo">
+
+        <img
+          src="assets/logo-icon.png"
+          alt="ShareGate"
+        />
+
+        <span>
+          ShareGate
+        </span>
+
+      </div>
+
+      <div class="menu">
+
+        <div class="menuItem active">
+          Dashboard
+        </div>
+
+        <a
+          href="index.html"
+          class="menuLink"
+        >
+          Upload
+        </a>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- TOPBAR -->
+      <div class="topbar">
+
+        <div>
+
+          <h1>
+            My Files
+          </h1>
+
+          <p>
+            Encrypted decentralized storage
+          </p>
+
+        </div>
+
+        <button id="connectBtn">
+          Connect Wallet
+        </button>
+
+      </div>
+
+      <!-- GRID -->
+      <div id="filesGrid">
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+  <script src="dashboard.js"></script>
+
+</body>
+
+</html>
