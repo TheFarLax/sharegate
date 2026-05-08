@@ -1,10 +1,14 @@
-import cors from "cors";
-import db from "./db.js";
 import express from "express";
 import cors from "cors";
+import multer from "multer";
 import { ethers } from "ethers";
 
+import db from "./db.js";
+import { uploadToIPFS } from "./ipfs.js";
+
 const app = express();
+
+const upload = multer();
 
 app.use(cors());
 
@@ -53,6 +57,51 @@ app.get("/", (req, res) => {
     "ShareGate backend running"
   );
 });
+
+// -----------------------------------
+// UPLOAD TO IPFS
+// -----------------------------------
+app.post(
+  "/upload",
+  upload.single("file"),
+
+  async (req, res) => {
+
+    try {
+
+      if (!req.file) {
+
+        return res
+          .status(400)
+          .json({
+            success: false,
+            error:
+              "No file uploaded",
+          });
+      }
+
+      const cid =
+        await uploadToIPFS(
+          req.file.buffer
+        );
+
+      res.json({
+        success: true,
+        cid,
+      });
+
+    } catch (err) {
+
+      console.error(err);
+
+      res.status(500).json({
+        success: false,
+        error:
+          "Upload failed",
+      });
+    }
+  }
+);
 
 // -----------------------------------
 // STORE KEY
@@ -190,7 +239,6 @@ app.post(
   }
 );
 
-
 // -----------------------------------
 // GET FILES
 // -----------------------------------
@@ -257,13 +305,11 @@ app.post(
           });
       }
 
-      // hash share id
       const shareIdHash =
         ethers.id(
           shareId
         );
 
-      // blockchain access
       const allowed =
         await contract.canAccess(
           shareIdHash,
@@ -281,7 +327,6 @@ app.post(
           });
       }
 
-      // success
       res.json({
         success: true,
 
@@ -296,7 +341,7 @@ app.post(
 
         fileType:
           stored.fileType,
-     });
+      });
 
     } catch (err) {
 
