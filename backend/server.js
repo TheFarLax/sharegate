@@ -163,8 +163,7 @@ app.post(
         expiry,
       } = req.body;
 
-      db.run(
-        `
+      db.prepare(`
         INSERT INTO files (
           shareId,
           cid,
@@ -175,16 +174,14 @@ app.post(
           expiry
         )
         VALUES (?, ?, ?, ?, ?, ?, ?)
-        `,
-        [
-          shareId,
-          cid,
-          ownerWallet,
-          recipientWallet,
-          fileName,
-          fileType,
-          expiry,
-        ]
+      `).run(
+        shareId,
+        cid,
+        ownerWallet,
+        recipientWallet,
+        fileName,
+        fileType,
+        expiry
       );
 
       res.json({
@@ -215,14 +212,11 @@ app.post(
         shareId
       } = req.body;
 
-      db.run(
-        `
+      db.prepare(`
         UPDATE files
         SET revoked = 1
         WHERE shareId = ?
-        `,
-        [shareId]
-      );
+      `).run(shareId);
 
       res.json({
         success: true,
@@ -246,34 +240,31 @@ app.get(
   "/files/:wallet",
   (req, res) => {
 
-    const wallet =
-      req.params.wallet;
+    try {
 
-    db.all(
-      `
-      SELECT * FROM files
-      WHERE ownerWallet = ?
-      ORDER BY id DESC
-      `,
-      [wallet],
+      const wallet =
+        req.params.wallet;
 
-      (err, rows) => {
+      const rows =
+        db.prepare(`
+          SELECT * FROM files
+          WHERE ownerWallet = ?
+          ORDER BY id DESC
+        `).all(wallet);
 
-        if (err) {
+      res.json({
+        success: true,
+        files: rows,
+      });
 
-          return res
-            .status(500)
-            .json({
-              success: false,
-            });
-        }
+    } catch (err) {
 
-        res.json({
-          success: true,
-          files: rows,
-        });
-      }
-    );
+      console.error(err);
+
+      res.status(500).json({
+        success: false,
+      });
+    }
   }
 );
 
