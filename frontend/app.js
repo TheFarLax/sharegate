@@ -414,7 +414,7 @@ uploadBtn.onclick =
 
             headers: {
               Authorization:
-                "Bearer your_pinata_jwt"
+                "Bearer PINATA_JWT"
             },
 
             body: formData,
