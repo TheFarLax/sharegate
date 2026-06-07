@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
 
   <link
     rel="icon"
@@ -13,7 +13,26 @@
     content="width=device-width, initial-scale=1.0"
   />
 
-  <title>Download File</title>
+  <meta
+    name="theme-color"
+    content="#050816"
+  />
+
+  <title>ShareGate — Download File</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <link
     rel="stylesheet"
@@ -23,34 +42,59 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
 </head>
 
-<body>
+<body class="downloadBody">
 
-  <div class="logo downloadLogo">
+  <!-- BACKGROUND GLOWS -->
+  <div class="bgGlows" aria-hidden="true">
+    <div class="glow glowOne"></div>
+    <div class="glow glowTwo"></div>
+    <div class="gridFade"></div>
+  </div>
+
+  <a href="landing.html" class="logo downloadLogo">
 
     <img
       src="assets/logo-icon.png"
-      alt="ShareGate"
+      alt="ShareGate logo"
     />
 
     <span>
       ShareGate
     </span>
 
-  </div>
+  </a>
 
   <div class="container">
 
-    <h1>Download File</h1>
+    <div class="downloadIcon" aria-hidden="true">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+    </div>
 
-    <button id="connectBtn">
-      Connect Wallet
-    </button>
+    <h1>Encrypted File</h1>
 
-    <button id="downloadBtn">
-      Download File
-    </button>
+    <p class="containerSub">
+      Connect your wallet to verify access and securely
+      decrypt this file in your browser.
+    </p>
+
+    <div class="downloadActions">
+
+      <button id="connectBtn">
+        Connect Wallet
+      </button>
+
+      <button id="downloadBtn" class="ghostBtn">
+        Download File
+      </button>
+
+    </div>
 
     <div id="status"></div>
+
+    <div class="secureNote">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Decryption happens locally. Keys never leave your device.
+    </div>
 
   </div>
 
