@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  
+
   <link
     rel="icon"
     href="assets/logo-icon.png"
@@ -14,9 +14,33 @@
     content="width=device-width, initial-scale=1.0"
   />
 
+  <meta
+    name="theme-color"
+    content="#050816"
+  />
+
+  <meta
+    name="description"
+    content="ShareGate is encrypted file sharing powered by Base, IPFS, and onchain permissions. Share files, control access, revoke anytime."
+  />
+
   <title>
-    ShareGate
+    ShareGate — Encrypted File Sharing on Base
   </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <link
     rel="stylesheet"
@@ -27,6 +51,14 @@
 
 <body>
 
+  <!-- BACKGROUND GLOWS -->
+  <div class="bgGlows" aria-hidden="true">
+    <div class="glow glowOne"></div>
+    <div class="glow glowTwo"></div>
+    <div class="glow glowThree"></div>
+    <div class="gridFade"></div>
+  </div>
+
   <!-- NAVBAR -->
   <nav class="navbar">
 
@@ -34,7 +66,7 @@
 
       <img
         src="assets/logo-icon.png"
-        alt="ShareGate"
+        alt="ShareGate logo"
       />
 
       <span>
@@ -67,22 +99,21 @@
   <!-- HERO -->
   <section class="hero">
 
-    <div class="heroContent">
+    <div class="heroContent reveal">
 
       <div class="badge">
-        Built on Base Sepolia
+        <span class="badgeDot"></span>
+        Built on Base
       </div>
 
       <h1>
-        Secure File Sharing
-        for Web3
+        Share Files.<br />
+        <span class="heroAccent">Control Access.</span>
       </h1>
 
       <p>
-        Encrypt files locally,
-        store them on IPFS,
-        and control access
-        on-chain.
+        Encrypted file sharing powered by Base, IPFS,
+        and onchain permissions.
       </p>
 
       <div class="heroButtons">
@@ -92,6 +123,7 @@
           class="primaryBtn"
         >
           Start Uploading
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
 
         <a
@@ -100,6 +132,79 @@
         >
           Open Dashboard
         </a>
+
+      </div>
+
+      <div class="trustRow">
+        <div class="trustItem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          AES-256 encryption
+        </div>
+        <div class="trustItem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+          Onchain permissions
+        </div>
+        <div class="trustItem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Expiry-based access
+        </div>
+      </div>
+
+    </div>
+
+    <!-- HERO VISUAL: wallet-to-wallet sharing -->
+    <div class="heroVisual reveal" aria-hidden="true">
+
+      <div class="networkPanel">
+
+        <!-- floating file cards -->
+        <div class="floatCard floatPdf">
+          <span class="fileTag tagPdf">PDF</span>
+          <div class="fileLines">
+            <span></span><span></span>
+          </div>
+        </div>
+
+        <div class="floatCard floatPng">
+          <span class="fileTag tagPng">PNG</span>
+          <div class="fileLines">
+            <span></span><span></span>
+          </div>
+        </div>
+
+        <div class="floatCard floatDocx">
+          <span class="fileTag tagDocx">DOCX</span>
+          <div class="fileLines">
+            <span></span><span></span>
+          </div>
+        </div>
+
+        <div class="floatCard floatZip">
+          <span class="fileTag tagZip">ZIP</span>
+          <div class="fileLines">
+            <span></span><span></span>
+          </div>
+        </div>
+
+        <!-- wallet to wallet -->
+        <div class="walletFlow">
+          <div class="walletNode">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+            <span>Sender</span>
+          </div>
+
+          <div class="flowLine">
+            <span class="flowPacket"></span>
+            <div class="lockBubble">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+          </div>
+
+          <div class="walletNode">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+            <span>Recipient</span>
+          </div>
+        </div>
 
       </div>
 
@@ -113,60 +218,83 @@
     id="features"
   >
 
-    <h2>
-      Features
-    </h2>
+    <div class="sectionHead reveal">
+      <span class="eyebrow">Why ShareGate</span>
+      <h2>
+        Security built into every layer
+      </h2>
+      <p class="sectionSub">
+        Files never leave your browser unencrypted. Access is enforced
+        onchain, so you stay in control at all times.
+      </p>
+    </div>
 
     <div class="featureGrid">
 
-      <div class="featureCard">
+      <div class="featureCard reveal">
+
+        <div class="featureIcon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
 
         <h3>
           End-to-End Encryption
         </h3>
 
         <p>
-          Files are encrypted
-          in your browser before upload.
+          Files are encrypted in your browser with AES-256 before
+          they ever touch the network.
         </p>
 
       </div>
 
-      <div class="featureCard">
+      <div class="featureCard reveal">
+
+        <div class="featureIcon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+        </div>
 
         <h3>
           Decentralized Storage
         </h3>
 
         <p>
-          Encrypted files are stored
-          on IPFS using Pinata.
+          Encrypted files are stored on IPFS, distributed and
+          resilient by design.
         </p>
 
       </div>
 
-      <div class="featureCard">
+      <div class="featureCard reveal">
+
+        <div class="featureIcon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+        </div>
 
         <h3>
           Wallet-Gated Access
         </h3>
 
         <p>
-          Only approved wallets
-          can decrypt shared files.
+          Only the wallets you approve can decrypt and download a
+          shared file.
         </p>
 
       </div>
 
-      <div class="featureCard">
+      <div class="featureCard reveal">
+
+        <div class="featureIcon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        </div>
 
         <h3>
           Revoke Anytime
         </h3>
 
         <p>
-          Instantly revoke access
-          directly from the dashboard.
+          Instantly revoke access onchain, directly from your
+          dashboard, in a single transaction.
         </p>
 
       </div>
@@ -181,13 +309,16 @@
     id="how"
   >
 
-    <h2>
-      How It Works
-    </h2>
+    <div class="sectionHead reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>
+        Three steps to a secure share
+      </h2>
+    </div>
 
     <div class="steps">
 
-      <div class="step">
+      <div class="step reveal">
 
         <div class="stepNumber">
           1
@@ -198,13 +329,13 @@
         </h3>
 
         <p>
-          Files are encrypted
-          locally using AES-256.
+          Files are encrypted locally using AES-256, right inside
+          your browser.
         </p>
 
       </div>
 
-      <div class="step">
+      <div class="step reveal">
 
         <div class="stepNumber">
           2
@@ -215,13 +346,13 @@
         </h3>
 
         <p>
-          Encrypted data is uploaded
-          to IPFS storage.
+          Encrypted data is uploaded to IPFS for decentralized,
+          durable storage.
         </p>
 
       </div>
 
-      <div class="step">
+      <div class="step reveal">
 
         <div class="stepNumber">
           3
@@ -232,8 +363,8 @@
         </h3>
 
         <p>
-          Access permissions are managed
-          on-chain through smart contracts.
+          Access permissions are managed onchain through smart
+          contracts on Base.
         </p>
 
       </div>
@@ -245,22 +376,56 @@
   <!-- CTA -->
   <section class="cta">
 
-    <h2>
-      Start Sharing Securely
-    </h2>
+    <div class="ctaCard reveal">
 
-    <p>
-      Private. Encrypted. Decentralized.
-    </p>
+      <h2>
+        Start sharing securely
+      </h2>
 
-    <a
-      href="index.html"
-      class="primaryBtn"
-    >
-      Launch ShareGate
-    </a>
+      <p>
+        Private. Encrypted. Decentralized.
+      </p>
+
+      <a
+        href="index.html"
+        class="primaryBtn"
+      >
+        Launch ShareGate
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+
+    </div>
 
   </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="logo footerLogo">
+      <img src="assets/logo-icon.png" alt="ShareGate logo" />
+      <span>ShareGate</span>
+    </div>
+    <p>Encrypted file sharing powered by Base, IPFS, and onchain permissions.</p>
+  </footer>
+
+  <script>
+    // Scroll reveal — visual only, no app logic touched
+    (function () {
+      var els = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        els.forEach(function (el) { el.classList.add("isVisible"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("isVisible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 
 </body>
 
